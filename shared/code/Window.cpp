@@ -31,10 +31,10 @@ namespace udit
 
         SDL_GL_SetAttribute (SDL_GL_CONTEXT_MAJOR_VERSION, context_details.version_major);
         SDL_GL_SetAttribute (SDL_GL_CONTEXT_MINOR_VERSION, context_details.version_minor);
+        SDL_GL_SetAttribute (SDL_GL_CONTEXT_PROFILE_MASK,  context_details.core_profile ? SDL_GL_CONTEXT_PROFILE_CORE : SDL_GL_CONTEXT_PROFILE_COMPATIBILITY);
         SDL_GL_SetAttribute (SDL_GL_DOUBLEBUFFER,          1);
         SDL_GL_SetAttribute (SDL_GL_ACCELERATED_VISUAL,    1);
 
-        if (context_details.core_profile       ) SDL_GL_SetAttribute (SDL_GL_CONTEXT_PROFILE_MASK, SDL_GL_CONTEXT_PROFILE_CORE);
         if (context_details.depth_buffer_size  ) SDL_GL_SetAttribute (SDL_GL_DEPTH_SIZE,     context_details.depth_buffer_size);
         if (context_details.stencil_buffer_size) SDL_GL_SetAttribute (SDL_GL_STENCIL_SIZE, context_details.stencil_buffer_size);
 
